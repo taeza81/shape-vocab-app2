@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>모양 어휘 학습</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="gameHeader">
+        <h1>🌟 모양 어휘 학습 🌟</h1>
+        <nav class="tabs">
+            <button class="tab-btn active" data-target="tracing">1. 글자 쓰기</button>
+            <button class="tab-btn" data-target="matching">2. 그림 맞추기</button>
+            <button class="tab-btn" data-target="aac">3. 소리 듣기</button>
+        </nav>
+    </header>
+    <main id="gameMain">
+        <!-- Tab 1: Tracing -->
+        <section id="tracing" class="tab-content active">
+            <div class="tracing-wrapper" id="tracingWrapper">
+                <canvas id="tracingCanvas"></canvas>
+            </div>
+            <div class="controls">
+                <button id="btnClear" class="action-btn">🗑️ 다시 쓰기</button>
+                <button id="btnNextWord" class="action-btn">➡️ 다음 단어</button>
+            </div>
+        </section>
+        <!-- Tab 2: Matching -->
+        <section id="matching" class="tab-content">
+            <div class="matching-header">
+                <div id="tutorialBadge" class="mode-badge">🌱 연습 모드</div>
+                <button id="btnSkipTutorial" class="action-btn skip-btn">실전 게임 건너뛰기 ⏩</button>
+            </div>
+            <div class="matching-container">
+                <div class="items-row pictures-row" id="picturesRow">
+                    <!-- Pictures injected by JS -->
+                </div>
+                <div class="items-row words-row" id="wordsRow">
+                    <!-- Words injected by JS -->
+                </div>
+            </div>
+        </section>
+        <!-- Tab 3: AAC -->
+        <section id="aac" class="tab-content">
+            <div class="gallery-container" id="aacGallery">
+                <!-- Gallery injected by JS -->
+            </div>
+        </section>
+        <!-- Success Modal -->
+        <div id="successModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-icon">🏆</div>
+                <h2>참 잘했어요!</h2>
+                <button id="btnRestartMatching" class="action-btn">🔄 다시 하기</button>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
